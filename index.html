@@ -148,7 +148,10 @@ h2{margin:0;font-weight:500;font-size:2rem;line-height:1.25;color:var(--gold2)}
 /* visit */
 .info dt{font-family:var(--sans);font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-top:22px}
 .info dd{margin:4px 0 0;font-size:1.15rem}
-.map iframe{display:block;width:100%;height:420px;border:1px solid var(--line);filter:grayscale(.6) invert(.92) hue-rotate(180deg) contrast(.9)}
+.map iframe{display:block;width:100%;height:420px;border:1px solid var(--line);position:relative;z-index:1;background:transparent;filter:saturate(.85) contrast(1.02)}
+.map{position:relative}
+.map .fb{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:20px;border:1px solid var(--line);background:linear-gradient(160deg,var(--ink2),var(--ink1));color:var(--gold2);font-size:18px}
+.map .fb a{color:var(--ink0);background:linear-gradient(135deg,#f6e3a1,var(--gold));padding:10px 20px;text-decoration:none;font-weight:600}
 @media (min-width:1000px){.map iframe{height:480px}}
 
 /* form */
@@ -509,6 +512,7 @@ h1,h2{background:linear-gradient(180deg,#fff6d6 0%,var(--gold2) 45%,var(--gold) 
       <p style="margin-top:26px"><a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=Vedic+Jyotish+Navgraha+Nivaran+Kendra+Babeja+Market+Samastipur" id="mapLink" rel="noopener" target="_blank"><span class="hi">Google Maps में खोलें</span><span class="en">Open in Google Maps</span></a></p>
     </div>
     <div class="map">
+      <div class="fb"><span>📍 Vedic Jyotish Navgraha Nivaran Kendra<br>Babeja Market, Samastipur</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Vedic+Jyotish+Navgraha+Nivaran+Kendra+Babeja+Market+Samastipur" rel="noopener" target="_blank">Google Maps</a></div>
       <iframe title="Map: Vedic Jyotish Navgraha Nivaran Kendra, Gudari Bazar, Samastipur"
         src="https://www.google.com/maps?q=Vedic+Jyotish+Navgraha+Nivaran+Kendra+Babeja+Market+Samastipur&amp;output=embed"
         loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
