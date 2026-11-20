@@ -241,6 +241,26 @@ footer .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(212,175
 .shot img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s}
 .shot:hover img{transform:scale(1.05)}
 .shot figcaption{padding:10px 14px;color:var(--gold2);font-size:1.02rem;border-top:1px solid var(--line)}
+
+/* ---- premium polish ---- */
+body{background-image:radial-gradient(1200px 600px at 80% -10%,rgba(212,175,55,.09),transparent 60%),radial-gradient(900px 500px at 0% 40%,rgba(120,80,200,.06),transparent 60%);background-attachment:fixed}
+h1,h2{background:linear-gradient(180deg,#fff6d6 0%,var(--gold2) 45%,var(--gold) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:.01em}
+.head h2::after{content:"";display:block;width:90px;height:1px;margin:16px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.card,.step,.faq details,details{border:1px solid var(--line);background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(255,255,255,.01));box-shadow:0 10px 30px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.05);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.card:hover,.step:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 18px 44px rgba(0,0,0,.5),0 0 28px rgba(212,175,55,.18)}
+.btn.gold{background:linear-gradient(135deg,#f6e3a1,var(--gold) 45%,var(--gold3));color:#1a1405;border:0;box-shadow:0 6px 20px rgba(212,175,55,.3);position:relative;overflow:hidden}
+.btn.gold::after{content:"";position:absolute;top:0;left:-70%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{0%,60%{left:-70%}100%{left:130%}}
+.btn:hover{transform:translateY(-2px)}
+.nav{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rating{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;padding:18px 16px;margin:0;text-align:center;background:linear-gradient(90deg,transparent,rgba(212,175,55,.1),transparent);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rating[hidden]{display:none}
+.rating .stars5{color:var(--gold);font-size:24px;letter-spacing:4px;text-shadow:0 0 14px rgba(212,175,55,.6)}
+.rating b{font-size:26px;color:var(--gold2)}
+.rating a{color:var(--ivory);text-decoration:underline;text-decoration-color:var(--gold)}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.btn.gold::after{animation:none}}
 </style>
 </head>
 <body data-lang="hi">
@@ -324,6 +344,10 @@ footer .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(212,175
   </div>
 </div>
 
+<div class="rating" id="ratingBar" hidden>
+  <span class="stars5" aria-hidden="true">★★★★★</span>
+  <span><b id="ratingNum"></b> <span class="hi">Google रेटिंग</span><span class="en">Google rating</span> · <a id="ratingLink" href="#" rel="noopener" target="_blank"><span id="ratingCnt"></span></a></span>
+</div>
 <div class="trust">
   <div class="wrap">
     <div><b>✦</b><span class="hi">रोज़ 9 AM – 9 PM</span><span class="en">Open daily 9 AM – 9 PM</span></div>
@@ -613,6 +637,25 @@ var LINKS = { gbp: "", fb: "", ig: "" };   // full https:// URLs
   [["gbp","gbpLink"],["fb","fbLink"],["ig","igLink"]].forEach(function(p){
     if (LINKS[p[0]]){ $(p[1]).href = LINKS[p[0]]; $(p[1]).hidden = false; }
   });
+})();
+
+// Google rating: enter the REAL rating and review count from your Google Business Profile.
+// The rating strip stays hidden until both are set.
+var RATING = "";        // e.g. "4.9"
+var REVIEWS = "";       // e.g. "27"
+(function(){
+  var b = document.getElementById("ratingBar");
+  if (RATING && REVIEWS){
+    document.getElementById("ratingNum").textContent = RATING + "/5";
+    document.getElementById("ratingCnt").textContent = REVIEWS + " reviews";
+    var a = document.getElementById("ratingLink");
+    if (LINKS.gbp) a.href = LINKS.gbp; else a.removeAttribute("href");
+    b.hidden = false;
+  }
+  var els = document.querySelectorAll("section .head, .card, .step, .gemart, .portrait, .joy, details");
+  if (!("IntersectionObserver" in window)){ return; }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }); },{threshold:.12});
+  els.forEach(function(el){ el.classList.add("rv"); io.observe(el); });
 })();
 
 var body = document.body, btn = document.getElementById("langBtn");
