@@ -184,9 +184,75 @@ footer .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(212,175
 .stickybar .c{border:1px solid var(--gold);color:var(--gold2)}
 .stickybar .w{background:linear-gradient(135deg,var(--gold2),var(--gold) 55%,var(--gold3));color:#1a1403}
 @media (min-width:1000px){.stickybar{display:none}body{padding-bottom:0}}
+
+/* ===== Illustrations, animation, happy tone ===== */
+.stars{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(1.6px 1.6px at 12% 22%,#fff,transparent),radial-gradient(1.2px 1.2px at 28% 70%,#ffe9a3,transparent),radial-gradient(1.6px 1.6px at 44% 16%,#fff,transparent),radial-gradient(1.2px 1.2px at 58% 82%,#fff,transparent),radial-gradient(1.6px 1.6px at 70% 28%,#ffe9a3,transparent),radial-gradient(1.2px 1.2px at 86% 64%,#fff,transparent),radial-gradient(1.6px 1.6px at 93% 12%,#fff,transparent),radial-gradient(1.2px 1.2px at 6% 88%,#ffe9a3,transparent);animation:tw 5s ease-in-out infinite alternate;opacity:.5}
+@keyframes tw{from{opacity:.25}to{opacity:.75}}
+.hero .wrap{position:relative}
+.glow{filter:drop-shadow(0 0 6px rgba(241,217,138,.9))}
+.orbit{transform-origin:200px 200px;animation:spin 60s linear infinite}
+.orbit.r2{animation-duration:38s;animation-direction:reverse}
+.orbit.r3{animation-duration:90s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes flick{0%,100%{transform:scale(1,1) skewX(0)}25%{transform:scale(.94,1.08) skewX(2deg)}50%{transform:scale(1.04,.95) skewX(-2deg)}75%{transform:scale(.97,1.05) skewX(1deg)}}
+@keyframes spark{0%,100%{transform:scale(0);opacity:0}50%{transform:scale(1);opacity:1}}
+@keyframes ripple{0%{r:6;opacity:.8}100%{r:34;opacity:0}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(212,175,55,.55)}100%{box-shadow:0 0 0 16px rgba(212,175,55,0)}}
+@keyframes wave{0%,100%{transform:skewY(0)}50%{transform:skewY(-8deg)}}
+.float{animation:float 5s ease-in-out infinite}
+.float.d1{animation-delay:-1s}.float.d2{animation-delay:-2.2s}.float.d3{animation-delay:-3.4s}
+.sp{transform-box:fill-box;transform-origin:center;animation:spark 2.6s ease-in-out infinite}
+.sp.d1{animation-delay:-.7s}.sp.d2{animation-delay:-1.5s}.sp.d3{animation-delay:-2.1s}
+.flame{transform-box:fill-box;transform-origin:50% 100%;animation:flick 1.6s ease-in-out infinite}
+.flag{transform-box:fill-box;transform-origin:0 50%;animation:wave 2s ease-in-out infinite}
+.pinb{animation:bob 2s ease-in-out infinite}
+.rip{animation:ripple 2.4s ease-out infinite}.rip.d1{animation-delay:-1.2s}
+.step .num{animation:pulse 2.6s ease-out infinite}
+.step:nth-child(2) .num{animation-delay:-.6s}.step:nth-child(3) .num{animation-delay:-1.2s}.step:nth-child(4) .num{animation-delay:-1.8s}
+
+.photo-slot{position:relative;overflow:hidden}
+.photo-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+.portrait svg{position:absolute;inset:8%;width:84%;height:84%;color:var(--gold);opacity:.8}
+.portrait{margin:0 auto}
+.portrait span{position:relative;z-index:1}
+.card .ic{position:absolute;right:18px;top:18px;width:40px;height:40px;color:var(--gold);transition:.3s}
+.card:hover .ic{transform:scale(1.15) rotate(-6deg);color:var(--gold2)}
+.gemart{margin:0 0 30px;border:1px solid var(--line);background:radial-gradient(ellipse at 50% 0,rgba(212,175,55,.14),transparent 70%),linear-gradient(160deg,var(--ink2),var(--ink1));aspect-ratio:800/190;min-height:130px}
+.gemart svg{position:absolute;inset:0;width:100%;height:100%}
+.minipin{display:block;margin:26px 0 0;max-width:340px;width:100%;color:var(--gold)}
+.diya{display:block;width:150px;margin:0 0 20px}
+.perks{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:8px}
+.perks li{display:flex;gap:10px;align-items:baseline;color:var(--ivory)}
+.perks li::before{content:"✦";color:var(--gold)}
+.joy{position:relative;overflow:hidden;padding:64px 0;text-align:center;background:radial-gradient(ellipse at 50% 0,rgba(212,175,55,.2),transparent 65%),var(--ink0);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.joy h2{font-size:1.9rem}
+.joy p{color:var(--muted);max-width:640px;margin:14px auto 26px}
+.joy .art{width:120px;margin:0 auto 10px;display:block}
+@media (min-width:1000px){.joy h2{font-size:2.6rem}}
+.fab{position:fixed;right:18px;bottom:78px;z-index:95;text-decoration:none;font-family:var(--sans);font-weight:700;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;padding:14px 20px;border-radius:999px;background:linear-gradient(135deg,var(--gold2),var(--gold) 55%,var(--gold3));color:#1a1403;animation:pulse 2.6s ease-out infinite}
+@media (min-width:1000px){.fab{bottom:26px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body data-lang="hi">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="gRuby" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff7aa5"/><stop offset="1" stop-color="#9d0f3b"/></linearGradient>
+  <linearGradient id="gEm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6df5b4"/><stop offset="1" stop-color="#0c7048"/></linearGradient>
+  <linearGradient id="gSap" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#86abff"/><stop offset="1" stop-color="#17358f"/></linearGradient>
+  <linearGradient id="gTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1a8"/><stop offset="1" stop-color="#d99a14"/></linearGradient>
+  <radialGradient id="gRud" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#b97b45"/><stop offset="1" stop-color="#3f230f"/></radialGradient>
+  <radialGradient id="gFlame" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#fff6c8"/><stop offset=".5" stop-color="#ffc13a"/><stop offset="1" stop-color="#ff7a1a"/></radialGradient>
+  <symbol id="i-crystal" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="20" r="12"/><path d="M14 38h20M17 33h14M19 15c2-3 6-4 9-2"/></symbol>
+  <symbol id="i-scroll" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10h24v28H12zM16 17h16M16 23h16M16 29h10"/></symbol>
+  <symbol id="i-rings" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="19" cy="24" r="10"/><circle cx="29" cy="24" r="10"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="24" cy="24" r="14"/><path d="M24 14v10l7 4M24 6v3M24 39v3M6 24h3M39 24h3"/></symbol>
+  <symbol id="i-brief" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M10 18h28v20H10zM18 18v-5h12v5M10 27h28"/></symbol>
+  <symbol id="i-home" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"><path d="M7 24 24 9l17 15M12 21v17h24V21M21 38v-9h6v9"/></symbol>
+  <symbol id="i-nine" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="15"/><text x="24" y="32" text-anchor="middle" font-size="22" fill="currentColor" stroke="none" font-family="serif">9</text></symbol>
+  <symbol id="i-gem" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M15 11h18l8 10-17 19L7 21zM7 21h34M15 11l9 10 9-10M24 21v19"/></symbol>
+  <symbol id="spk" viewBox="-10 -10 20 20"><path d="M0-9Q0 0 9 0Q0 0 0 9Q0 0-9 0Q0 0 0-9Z" fill="currentColor"/></symbol>
+</defs></svg>
 <a class="skip" href="#main"><span class="hi">मुख्य सामग्री पर जाएँ</span><span class="en">Skip to content</span></a>
 
 <!-- NAV -->
@@ -215,6 +281,7 @@ footer .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(212,175
 
 <!-- 1. HERO -->
 <div class="hero" id="top">
+  <div class="stars" aria-hidden="true"></div>
   <div class="wrap">
     <div>
       <div class="eyebrow"><span class="hi">गुदड़ी बाज़ार · समस्तीपुर</span><span class="en">Gudari Bazar · Samastipur</span></div>
@@ -231,33 +298,19 @@ footer .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(212,175
     </div>
     <div class="wheel" aria-hidden="true">
       <svg viewBox="0 0 400 400" fill="none" stroke="currentColor" stroke-width="1">
-        <circle cx="200" cy="200" r="196" opacity=".5"/>
-        <circle cx="200" cy="200" r="186" opacity=".25"/>
-        <g class="spin" opacity=".55">
-          <circle cx="200" cy="200" r="150"/>
-          <g>
-            <line x1="200" y1="14" x2="200" y2="386"/>
-            <line x1="200" y1="14" x2="200" y2="386" transform="rotate(30 200 200)"/>
-            <line x1="200" y1="14" x2="200" y2="386" transform="rotate(60 200 200)"/>
-            <line x1="200" y1="14" x2="200" y2="386" transform="rotate(90 200 200)"/>
-            <line x1="200" y1="14" x2="200" y2="386" transform="rotate(120 200 200)"/>
-            <line x1="200" y1="14" x2="200" y2="386" transform="rotate(150 200 200)"/>
-          </g>
-        </g>
-        <g class="spin2" fill="currentColor" stroke="none">
-          <circle cx="200" cy="70" r="5"/>
-          <circle cx="200" cy="70" r="5" transform="rotate(40 200 200)"/>
-          <circle cx="200" cy="70" r="5" transform="rotate(80 200 200)"/>
-          <circle cx="200" cy="70" r="5" transform="rotate(120 200 200)"/>
-          <circle cx="200" cy="70" r="5" transform="rotate(160 200 200)"/>
-          <circle cx="200" cy="70" r="5" transform="rotate(200 200 200)"/>
-          <circle cx="200" cy="70" r="5" transform="rotate(240 200 200)"/>
-          <circle cx="200" cy="70" r="5" transform="rotate(280 200 200)"/>
-          <circle cx="200" cy="70" r="5" transform="rotate(320 200 200)"/>
-        </g>
-        <circle cx="200" cy="200" r="100" opacity=".7"/>
-        <circle cx="200" cy="200" r="56" fill="#0b0b0f" stroke="currentColor"/>
-        <text x="200" y="222" text-anchor="middle" font-size="60" fill="currentColor" stroke="none" font-family="serif">ॐ</text>
+        <circle cx="200" cy="200" r="196" opacity=".55"/>
+        <circle cx="200" cy="200" r="168" opacity=".35"/>
+        <g class="spin" fill="currentColor" stroke="none" opacity=".9"><text x="200" y="30" text-anchor="middle" font-size="17" transform="rotate(0 200 200)">♈&#xFE0E;</text><text x="200" y="30" text-anchor="middle" font-size="17" transform="rotate(30 200 200)">♉&#xFE0E;</text><text x="200" y="30" text-anchor="middle" font-size="17" transform="rotate(60 200 200)">♊&#xFE0E;</text><text x="200" y="30" text-anchor="middle" font-size="17" transform="rotate(90 200 200)">♋&#xFE0E;</text><text x="200" y="30" text-anchor="middle" font-size="17" transform="rotate(120 200 200)">♌&#xFE0E;</text><text x="200" y="30" text-anchor="middle" font-size="17" transform="rotate(150 200 200)">♍&#xFE0E;</text><text x="200" y="30" text-anchor="middle" font-size="17" transform="rotate(180 200 200)">♎&#xFE0E;</text><text x="200" y="30" text-anchor="middle" font-size="17" transform="rotate(210 200 200)">♏&#xFE0E;</text><text x="200" y="30" text-anchor="middle" font-size="17" transform="rotate(240 200 200)">♐&#xFE0E;</text><text x="200" y="30" text-anchor="middle" font-size="17" transform="rotate(270 200 200)">♑&#xFE0E;</text><text x="200" y="30" text-anchor="middle" font-size="17" transform="rotate(300 200 200)">♒&#xFE0E;</text><text x="200" y="30" text-anchor="middle" font-size="17" transform="rotate(330 200 200)">♓&#xFE0E;</text></g>
+        <g class="spin2" opacity=".4"><line x1="200" y1="60" x2="200" y2="340" transform="rotate(0 200 200)"/><line x1="200" y1="60" x2="200" y2="340" transform="rotate(30 200 200)"/><line x1="200" y1="60" x2="200" y2="340" transform="rotate(60 200 200)"/><line x1="200" y1="60" x2="200" y2="340" transform="rotate(90 200 200)"/><line x1="200" y1="60" x2="200" y2="340" transform="rotate(120 200 200)"/><line x1="200" y1="60" x2="200" y2="340" transform="rotate(150 200 200)"/><circle cx="200" cy="200" r="140"/></g>
+        <circle cx="200" cy="200" r="104" opacity=".6"/>
+        <g class="orbit glow" stroke="none"><circle cx="200" cy="96" r="9" fill="#ffd966"/><circle cx="200" cy="96" r="14" fill="none" stroke="#ffd966" opacity=".5"/></g>
+        <g class="orbit r2 glow" stroke="none"><circle cx="200" cy="130" r="6" fill="#f1d98a"/></g>
+        <g class="orbit r3 glow" stroke="none"><circle cx="200" cy="60" r="7" fill="#e7e2ff"/><circle cx="200" cy="340" r="5" fill="#ff9a8a"/></g>
+        <circle cx="200" cy="200" r="52" fill="#0b0b0f" stroke="currentColor"/>
+        <text x="200" y="220" text-anchor="middle" font-size="56" fill="currentColor" stroke="none" font-family="serif">ॐ</text>
+        <use href="#spk" x="40" y="60" width="18" height="18" class="sp" style="color:#ffe9a3"/>
+        <use href="#spk" x="340" y="330" width="16" height="16" class="sp d2" style="color:#ffe9a3"/>
+        <use href="#spk" x="350" y="70" width="14" height="14" class="sp d1" style="color:#fff"/>
       </svg>
     </div>
   </div>
@@ -277,7 +330,12 @@ footer .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(212,175
 <!-- 2. ABOUT -->
 <section id="about">
   <div class="wrap split wide-l about">
-    <div class="portrait" role="img" aria-label="Saurav Tandon"><span>ST</span></div>
+    <figure class="portrait photo-slot" style="margin:0 auto">
+      <svg viewBox="0 0 400 400" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><g class="spin" style="transform-origin:200px 200px"><ellipse cx="200" cy="95" rx="22" ry="82" transform="rotate(0 200 200)" opacity=".55"/><ellipse cx="200" cy="95" rx="22" ry="82" transform="rotate(30 200 200)" opacity=".55"/><ellipse cx="200" cy="95" rx="22" ry="82" transform="rotate(60 200 200)" opacity=".55"/><ellipse cx="200" cy="95" rx="22" ry="82" transform="rotate(90 200 200)" opacity=".55"/><ellipse cx="200" cy="95" rx="22" ry="82" transform="rotate(120 200 200)" opacity=".55"/><ellipse cx="200" cy="95" rx="22" ry="82" transform="rotate(150 200 200)" opacity=".55"/><ellipse cx="200" cy="95" rx="22" ry="82" transform="rotate(180 200 200)" opacity=".55"/><ellipse cx="200" cy="95" rx="22" ry="82" transform="rotate(210 200 200)" opacity=".55"/><ellipse cx="200" cy="95" rx="22" ry="82" transform="rotate(240 200 200)" opacity=".55"/><ellipse cx="200" cy="95" rx="22" ry="82" transform="rotate(270 200 200)" opacity=".55"/><ellipse cx="200" cy="95" rx="22" ry="82" transform="rotate(300 200 200)" opacity=".55"/><ellipse cx="200" cy="95" rx="22" ry="82" transform="rotate(330 200 200)" opacity=".55"/><circle cx="200" cy="200" r="190" opacity=".5"/><circle cx="200" cy="200" r="70" opacity=".6"/></g></svg>
+      <span>ST</span>
+      <!-- Add a real photo at images/saurav-tandon.jpg and it replaces the illustration automatically -->
+      <img src="images/saurav-tandon.jpg" alt="Jyotishi Saurav Tandon" onerror="this.remove()" loading="lazy">
+    </figure>
     <div>
       <div class="head" style="margin-bottom:12px"><span class="k"><span class="hi">ज्योतिषी के बारे में</span><span class="en">About the astrologer</span></span></div>
       <h3><span class="hi">ज्योतिषी सौरव टंडन</span><span class="en">Jyotishi Saurav Tandon</span></h3>
@@ -299,14 +357,14 @@ footer .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(212,175
   <div class="wrap">
     <div class="head"><span class="k"><span class="hi">हमारी सेवाएँ</span><span class="en">What we offer</span></span><h2><span class="hi">सेवाएँ और शुल्क</span><span class="en">Services and fees</span></h2></div>
     <div class="grid g4">
-      <div class="card"><div class="n">01</div><h3><span class="hi">ज्योतिष परामर्श</span><span class="en">Jyotish consultation</span></h3><div class="fee">₹501 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
-      <div class="card"><div class="n">02</div><h3><span class="hi">कुंडली विश्लेषण</span><span class="en">Kundali reading</span></h3><div class="fee">₹1,100 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
-      <div class="card"><div class="n">03</div><h3><span class="hi">कुंडली मिलान</span><span class="en">Kundali milan (matching)</span></h3><div class="fee">₹501 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
-      <div class="card"><div class="n">04</div><h3><span class="hi">मुहूर्त</span><span class="en">Muhurat</span></h3><div class="fee">₹501 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
-      <div class="card"><div class="n">05</div><h3><span class="hi">करियर और व्यापार मार्गदर्शन</span><span class="en">Career and business guidance</span></h3><div class="fee">₹1,100 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
-      <div class="card"><div class="n">06</div><h3><span class="hi">वास्तु</span><span class="en">Vastu</span></h3><div class="fee">₹2,100 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
-      <div class="card"><div class="n">07</div><h3><span class="hi">अंक ज्योतिष</span><span class="en">Numerology</span></h3><div class="fee">₹501 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
-      <div class="card"><div class="n">08</div><h3><span class="hi">रत्न और रुद्राक्ष सलाह</span><span class="en">Gemstone and rudraksha advice</span></h3><div class="fee">₹501 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
+      <div class="card"><svg class="ic" aria-hidden="true"><use href="#i-crystal"/></svg><div class="n">01</div><h3><span class="hi">ज्योतिष परामर्श</span><span class="en">Jyotish consultation</span></h3><div class="fee">₹501 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
+      <div class="card"><svg class="ic" aria-hidden="true"><use href="#i-scroll"/></svg><div class="n">02</div><h3><span class="hi">कुंडली विश्लेषण</span><span class="en">Kundali reading</span></h3><div class="fee">₹1,100 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
+      <div class="card"><svg class="ic" aria-hidden="true"><use href="#i-rings"/></svg><div class="n">03</div><h3><span class="hi">कुंडली मिलान</span><span class="en">Kundali milan (matching)</span></h3><div class="fee">₹501 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
+      <div class="card"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><div class="n">04</div><h3><span class="hi">मुहूर्त</span><span class="en">Muhurat</span></h3><div class="fee">₹501 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
+      <div class="card"><svg class="ic" aria-hidden="true"><use href="#i-brief"/></svg><div class="n">05</div><h3><span class="hi">करियर और व्यापार मार्गदर्शन</span><span class="en">Career and business guidance</span></h3><div class="fee">₹1,100 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
+      <div class="card"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg><div class="n">06</div><h3><span class="hi">वास्तु</span><span class="en">Vastu</span></h3><div class="fee">₹2,100 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
+      <div class="card"><svg class="ic" aria-hidden="true"><use href="#i-nine"/></svg><div class="n">07</div><h3><span class="hi">अंक ज्योतिष</span><span class="en">Numerology</span></h3><div class="fee">₹501 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
+      <div class="card"><svg class="ic" aria-hidden="true"><use href="#i-gem"/></svg><div class="n">08</div><h3><span class="hi">रत्न और रुद्राक्ष सलाह</span><span class="en">Gemstone and rudraksha advice</span></h3><div class="fee">₹501 <span class="hi">से शुरू</span><span class="en">onwards</span></div></div>
     </div>
     <div class="band">
       <div><strong><span class="hi">फ़ोन / व्हाट्सऐप परामर्श उपलब्ध</span><span class="en">Phone / WhatsApp consultation available</span></strong><br>
@@ -323,6 +381,11 @@ footer .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(212,175
   <div class="wrap">
     <div class="head"><span class="k"><span class="hi">Tandon Jewellers के साथ</span><span class="en">With Tandon Jewellers</span></span><h2><span class="hi">रत्न और रुद्राक्ष</span><span class="en">Gemstones and rudraksha</span></h2>
       <p><span class="hi">हर रत्न के बारे में साफ़ बताया जाता है कि वह प्राकृतिक (natural), उपचारित (treated) या कृत्रिम (synthetic) है, और खरीद पर पक्का बिल दिया जाता है।</span><span class="en">Every stone is clearly described as natural, treated or synthetic, and a written bill is given with every purchase.</span></p></div>
+    <figure class="gemart photo-slot" style="margin:0 0 30px">
+      <svg viewBox="0 0 800 190" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g transform="translate(160 100)"><g class="float d1"><polygon points="-46,-14 -26,-40 26,-40 46,-14 0,46" fill="url(#gRuby)"/><path d="M-46-14H46M-26-40-12-14 0 46 12-14 26-40M-12-14 0-40 12-14" stroke="rgba(255,255,255,.5)" stroke-width="1.2" fill="none"/></g><use href="#spk" x="14" y="-50" width="22" height="22" class="sp d1" style="color:#fff"/></g><g transform="translate(360 100)"><g class="float d3"><polygon points="-46,-14 -26,-40 26,-40 46,-14 0,46" fill="url(#gEm)"/><path d="M-46-14H46M-26-40-12-14 0 46 12-14 26-40M-12-14 0-40 12-14" stroke="rgba(255,255,255,.5)" stroke-width="1.2" fill="none"/></g><use href="#spk" x="14" y="-50" width="22" height="22" class="sp d3" style="color:#fff"/></g><g transform="translate(560 100)"><g class="float d2"><circle r="38" fill="url(#gRud)"/><g stroke="#e4b46d" stroke-width="1.2" fill="none" opacity=".8"><path d="M0-38C16-14 16 14 0 38"/><path d="M0-38C-16-14-16 14 0 38"/><path d="M0-38C34-14 34 14 0 38" opacity=".6"/><path d="M0-38C-34-14-34 14 0 38" opacity=".6"/></g><circle cy="-38" r="3.5" fill="#0b0b0f" stroke="#e4b46d"/></g><use href="#spk" x="18" y="-46" width="20" height="20" class="sp d1" style="color:#ffe9a3"/></g><g transform="translate(680 100)"><g class="float d2"><polygon points="-46,-14 -26,-40 26,-40 46,-14 0,46" fill="url(#gSap)"/><path d="M-46-14H46M-26-40-12-14 0 46 12-14 26-40M-12-14 0-40 12-14" stroke="rgba(255,255,255,.5)" stroke-width="1.2" fill="none"/></g><use href="#spk" x="14" y="-50" width="22" height="22" class="sp d2" style="color:#fff"/></g><use href="#spk" x="80" y="30" width="16" height="16" class="sp d3" style="color:#ffe9a3"/><use href="#spk" x="720" y="150" width="16" height="16" class="sp" style="color:#fff"/></svg>
+      <!-- Add a real photo of your stock at images/gemstones.jpg and it replaces the illustration automatically -->
+      <img src="images/gemstones.jpg" alt="Gemstones and rudraksha at Tandon Jewellers" onerror="this.remove()" loading="lazy">
+    </figure>
     <div class="grid g3">
       <div class="card"><div class="n">I</div><h3><span class="hi">प्राकृतिक रत्न</span><span class="en">Natural gemstones</span></h3><p><span class="hi">पुखराज, नीलम, माणिक्य, मूंगा, पन्ना, मोती और अन्य। प्रकृति और उपचार की स्थिति साफ़ बताई जाती है।</span><span class="en">Yellow sapphire, blue sapphire, ruby, coral, emerald, pearl and more, with origin and treatment status stated clearly.</span></p></div>
       <div class="card"><div class="n">II</div><h3><span class="hi">रुद्राक्ष</span><span class="en">Rudraksha</span></h3><p><span class="hi">विभिन्न मुखी के रुद्राक्ष और माला, कुंडली के अनुसार सलाह के साथ।</span><span class="en">Rudraksha beads and malas of different mukhi, chosen with advice from your kundali.</span></p></div>
@@ -344,6 +407,16 @@ footer .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(212,175
     </div>
   </div>
 </section>
+
+<!-- HAPPY CTA -->
+<div class="joy">
+  <div class="wrap">
+    <div class="art"><svg viewBox="0 0 120 110" aria-hidden="true"><ellipse cx="60" cy="88" rx="44" ry="8" fill="#000" opacity=".4"/><path d="M14 66h92c0 18-18 28-46 28S14 84 14 66z" fill="url(#gTop)"/><path d="M14 66h92" stroke="#7a5200" stroke-width="2"/><g class="flame"><path d="M60 14c14 14 20 26 8 38-4 4-12 4-16 0-12-12-4-24 8-38z" fill="url(#gFlame)"/></g><use href="#spk" x="14" y="14" width="14" height="14" class="sp" style="color:#ffe9a3"/><use href="#spk" x="92" y="22" width="12" height="12" class="sp d2" style="color:#fff"/></svg></div>
+    <h2><span class="hi">अपने सवालों का रास्ता, कुंडली से</span><span class="en">Find direction for your questions through your kundali</span></h2>
+    <p><span class="hi">विवाह, करियर, व्यापार या नया घर: शांति से बैठकर सरल भाषा में बात करें। आज ही अपना परामर्श बुक करें।</span><span class="en">Marriage, career, business or a new home: sit down, talk it through in plain words. Book your consultation today.</span></p>
+    <a class="btn gold" href="#book"><span class="hi">परामर्श बुक करें</span><span class="en">Book your consultation</span></a>
+  </div>
+</div>
 
 <!-- 6. TESTIMONIALS
      Intentionally empty. Add only real testimonials, and only with the customer's written permission.
@@ -373,6 +446,15 @@ footer .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(212,175
         <dt id="phoneDt" hidden><span class="hi">फ़ोन</span><span class="en">Phone</span></dt>
         <dd id="phoneLine" hidden><a id="telLink" href="#"></a></dd>
       </dl>
+      <svg class="minipin" viewBox="0 0 340 130" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+      <path d="M20 118h300" opacity=".5"/>
+      <path d="M200 118V74h60v44M190 74h80l-10-14h-60zM210 60l20-34 20 34M230 26v-14" stroke-linejoin="round"/>
+      <g class="flag"><path d="M230 12h22l-6 6 6 6h-22z" fill="currentColor" stroke="none"/></g>
+      <path d="M222 118v-26a8 8 0 0 1 16 0v26" />
+      <circle class="rip" cx="100" cy="112" r="6" stroke="#f1d98a"/><circle class="rip d1" cx="100" cy="112" r="6" stroke="#f1d98a"/>
+      <g class="pinb"><path d="M100 98c-14-16-22-26-22-38a22 22 0 0 1 44 0c0 12-8 22-22 38z" fill="url(#gTop)" stroke="none"/><circle cx="100" cy="60" r="8" fill="#0b0b0f" stroke="none"/></g>
+      <text x="20" y="110" font-size="0">.</text>
+      </svg>
       <p style="margin-top:26px"><a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=Babeja+Market+Gudari+Bazar+Samastipur+Bihar+848101" id="mapLink" rel="noopener" target="_blank"><span class="hi">Google Maps में खोलें</span><span class="en">Open in Google Maps</span></a></p>
     </div>
     <div class="map">
@@ -389,6 +471,12 @@ footer .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(212,175
     <div>
       <div class="head" style="margin-bottom:0"><span class="k"><span class="hi">अपॉइंटमेंट</span><span class="en">Appointment</span></span><h2><span class="hi">अपॉइंटमेंट बुक करें</span><span class="en">Book an appointment</span></h2>
         <p><span class="hi">फ़ॉर्म भरें, व्हाट्सऐप खुलेगा और आपका संदेश तैयार मिलेगा। हम आपको समय की पुष्टि भेजेंगे।</span><span class="en">Fill in the form and WhatsApp opens with your message ready. We will reply to confirm a time.</span></p></div>
+      <div class="diya"><svg viewBox="0 0 120 110" aria-hidden="true"><ellipse cx="60" cy="88" rx="44" ry="8" fill="#000" opacity=".4"/><path d="M14 66h92c0 18-18 28-46 28S14 84 14 66z" fill="url(#gTop)"/><path d="M14 66h92" stroke="#7a5200" stroke-width="2"/><g class="flame"><path d="M60 14c14 14 20 26 8 38-4 4-12 4-16 0-12-12-4-24 8-38z" fill="url(#gFlame)"/></g><use href="#spk" x="14" y="14" width="14" height="14" class="sp" style="color:#ffe9a3"/><use href="#spk" x="92" y="22" width="12" height="12" class="sp d2" style="color:#fff"/></svg></div>
+      <ul class="perks">
+        <li><span class="hi">सरल भाषा में, ध्यान से बात</span><span class="en">Plain-spoken, unhurried conversation</span></li>
+        <li><span class="hi">आमने-सामने या फ़ोन / व्हाट्सऐप पर</span><span class="en">In person, or by phone / WhatsApp</span></li>
+        <li><span class="hi">समय की पुष्टि व्हाट्सऐप पर</span><span class="en">Time confirmed on WhatsApp</span></li>
+      </ul>
     </div>
     <form id="bookForm">
       <div class="two">
@@ -468,6 +556,8 @@ footer .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(212,175
     <div class="legal">© <span id="yr">2026</span> Tandon Jewellers · <span class="hi">ज्योतिष मार्गदर्शन के लिए है; किसी परिणाम की गारंटी नहीं।</span><span class="en">Astrology is guidance only; no results are guaranteed.</span></div>
   </div>
 </footer>
+
+<a class="fab" href="#book"><span class="hi">परामर्श बुक करें</span><span class="en">Book consultation</span></a>
 
 <!-- Mobile Call / WhatsApp bar -->
 <nav class="stickybar" id="stickybar" aria-label="Contact" hidden>
