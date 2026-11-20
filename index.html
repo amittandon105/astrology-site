@@ -11,6 +11,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://astrology.tandonjewellers.com/">
 <meta name="theme-color" content="#0b0b0f">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0b0f'/%3E%3Ccircle cx='32' cy='32' r='25' fill='none' stroke='%23d4af37' stroke-width='3'/%3E%3Cpath d='M32 12Q32 32 52 32Q32 32 32 52Q32 32 12 32Q32 32 32 12Z' fill='%23f1d98a'/%3E%3C/svg%3E">
 
 <!-- Add "telephone" and "sameAs" (Google Business Profile, Facebook, Instagram URLs) here once final; they must match the Google Business Profile. -->
 <script type="application/ld+json">
@@ -233,6 +234,12 @@ footer .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(212,175
 .fab{position:fixed;right:18px;bottom:78px;z-index:95;text-decoration:none;font-family:var(--sans);font-weight:700;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;padding:14px 20px;border-radius:999px;background:linear-gradient(135deg,var(--gold2),var(--gold) 55%,var(--gold3));color:#1a1403;animation:pulse 2.6s ease-out infinite}
 @media (min-width:1000px){.fab{bottom:26px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.shot{margin:0;border:1px solid var(--line);background:var(--ink1);overflow:hidden}
+.shot img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s}
+.shot:hover img{transform:scale(1.05)}
+.shot figcaption{padding:10px 14px;color:var(--gold2);font-size:1.02rem;border-top:1px solid var(--line)}
 </style>
 </head>
 <body data-lang="hi">
@@ -390,6 +397,25 @@ footer .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(212,175
       <div class="card"><div class="n">I</div><h3><span class="hi">प्राकृतिक रत्न</span><span class="en">Natural gemstones</span></h3><p><span class="hi">पुखराज, नीलम, माणिक्य, मूंगा, पन्ना, मोती और अन्य। प्रकृति और उपचार की स्थिति साफ़ बताई जाती है।</span><span class="en">Yellow sapphire, blue sapphire, ruby, coral, emerald, pearl and more, with origin and treatment status stated clearly.</span></p></div>
       <div class="card"><div class="n">II</div><h3><span class="hi">रुद्राक्ष</span><span class="en">Rudraksha</span></h3><p><span class="hi">विभिन्न मुखी के रुद्राक्ष और माला, कुंडली के अनुसार सलाह के साथ।</span><span class="en">Rudraksha beads and malas of different mukhi, chosen with advice from your kundali.</span></p></div>
       <div class="card"><div class="n">III</div><h3><span class="hi">ईमानदार जानकारी, पक्का बिल</span><span class="en">Honest details, written bill</span></h3><p><span class="hi">हर रत्न पर साफ़ लिखा जाता है: प्राकृतिक, उपचारित या कृत्रिम। खरीद पर पक्का बिल।</span><span class="en">Each stone is described as natural, treated or synthetic. A written bill with every purchase.</span></p></div>
+    </div>
+    <!-- PHOTO GALLERY: drop real photos into images/ using these file names; only the ones that exist are shown. -->
+    <div class="gallery-wrap" id="galleryWrap" hidden>
+      <div class="head" style="margin:44px 0 20px"><span class="k"><span class="hi">असली तस्वीरें</span><span class="en">Real photos</span></span><h2 style="font-size:1.6rem"><span class="hi">हमारे संग्रह से</span><span class="en">From our collection</span></h2></div>
+      <div class="gallery" id="gallery">
+      <figure class="shot" hidden><img src="images/ruby.jpg" alt="Ruby" loading="lazy"><figcaption><span class="hi">माणिक्य</span><span class="en">Ruby</span></figcaption></figure>
+      <figure class="shot" hidden><img src="images/pearl.jpg" alt="Pearl" loading="lazy"><figcaption><span class="hi">मोती</span><span class="en">Pearl</span></figcaption></figure>
+      <figure class="shot" hidden><img src="images/coral.jpg" alt="Red coral" loading="lazy"><figcaption><span class="hi">मूंगा</span><span class="en">Red coral</span></figcaption></figure>
+      <figure class="shot" hidden><img src="images/emerald.jpg" alt="Emerald" loading="lazy"><figcaption><span class="hi">पन्ना</span><span class="en">Emerald</span></figcaption></figure>
+      <figure class="shot" hidden><img src="images/yellow-sapphire.jpg" alt="Yellow sapphire" loading="lazy"><figcaption><span class="hi">पुखराज</span><span class="en">Yellow sapphire</span></figcaption></figure>
+      <figure class="shot" hidden><img src="images/blue-sapphire.jpg" alt="Blue sapphire" loading="lazy"><figcaption><span class="hi">नीलम</span><span class="en">Blue sapphire</span></figcaption></figure>
+      <figure class="shot" hidden><img src="images/hessonite.jpg" alt="Hessonite" loading="lazy"><figcaption><span class="hi">गोमेद</span><span class="en">Hessonite</span></figcaption></figure>
+      <figure class="shot" hidden><img src="images/cats-eye.jpg" alt="Cat's eye" loading="lazy"><figcaption><span class="hi">लहसुनिया</span><span class="en">Cat's eye</span></figcaption></figure>
+      <figure class="shot" hidden><img src="images/rudraksha.jpg" alt="Rudraksha" loading="lazy"><figcaption><span class="hi">रुद्राक्ष</span><span class="en">Rudraksha</span></figcaption></figure>
+      <figure class="shot" hidden><img src="images/rudraksha-mala.jpg" alt="Rudraksha mala" loading="lazy"><figcaption><span class="hi">रुद्राक्ष माला</span><span class="en">Rudraksha mala</span></figcaption></figure>
+      <figure class="shot" hidden><img src="images/yantra.jpg" alt="Yantra" loading="lazy"><figcaption><span class="hi">यंत्र</span><span class="en">Yantra</span></figcaption></figure>
+      <figure class="shot" hidden><img src="images/kundali.jpg" alt="Kundali chart" loading="lazy"><figcaption><span class="hi">कुंडली</span><span class="en">Kundali chart</span></figcaption></figure>
+      <figure class="shot" hidden><img src="images/shop.jpg" alt="Our shop" loading="lazy"><figcaption><span class="hi">हमारी दुकान</span><span class="en">Our shop</span></figcaption></figure>
+      </div>
     </div>
     <p class="note" style="margin-top:18px"><span class="hi">रत्न पहनने से पहले अपनी कुंडली के अनुसार सलाह ज़रूर लें।</span><span class="en">Please take advice based on your kundali before wearing any gemstone.</span></p>
   </div>
@@ -612,6 +638,15 @@ document.getElementById("bookForm").addEventListener("submit", function(e){
     (f.msg.value ? "Message: " + f.msg.value + "\n" : "");
   window.open("https://wa.me/" + (WHATSAPP ? "91" + WHATSAPP : "") + "?text=" + encodeURIComponent(text), "_blank", "noopener");
 });
+
+// Show only the gallery photos that actually exist in images/
+(function(){
+  var wrap = document.getElementById("galleryWrap");
+  document.querySelectorAll("#gallery .shot img").forEach(function(img){
+    function ok(){ img.parentNode.hidden = false; wrap.hidden = false; }
+    if (img.complete && img.naturalWidth) ok(); else img.addEventListener("load", ok);
+  });
+})();
 </script>
 </body>
 </html>
