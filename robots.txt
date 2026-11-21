@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://astrology.tandonjewellers.com/sitemap.xml

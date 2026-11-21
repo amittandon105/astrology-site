@@ -10,6 +10,10 @@
 <meta property="og:description" content="Vedic astrology, kundali, gemstones and rudraksha in Gudari Bazar, Samastipur.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://astrology.tandonjewellers.com/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:image" content="https://astrology.tandonjewellers.com/images/og-card.png">
+<meta property="og:locale" content="hi_IN">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b0b0f">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0b0f'/%3E%3Ccircle cx='32' cy='32' r='25' fill='none' stroke='%23d4af37' stroke-width='3'/%3E%3Cpath d='M32 12Q32 32 52 32Q32 32 32 52Q32 32 12 32Q32 32 32 12Z' fill='%23f1d98a'/%3E%3C/svg%3E">
 
@@ -22,6 +26,8 @@
   "name": "Vedic Jyotish Navgraha Nivaran Kendra",
   "alternateName": "वैदिक ज्योतिष नवग्रह निवारण केंद्र",
   "url": "https://astrology.tandonjewellers.com/",
+  "image": "https://astrology.tandonjewellers.com/images/og-card.png",
+  "areaServed": [{"@type":"City","name":"Samastipur"},{"@type":"State","name":"Bihar"}],
   "parentOrganization": { "@type": "Organization", "name": "Tandon Jewellers" },
   "address": {
     "@type": "PostalAddress",
@@ -37,6 +43,63 @@
     "opens": "09:00",
     "closes": "21:00"
   }
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What should I bring?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Date, time and place of birth. Bring your kundali if you have one."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I consult by phone?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, phone and WhatsApp consultations are available."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Are the gemstones genuine?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "We state whether each stone is natural, treated or synthetic before sale, and give a written bill."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Are results guaranteed?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Astrology is guidance; we do not guarantee any outcome."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "When are you open?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Every day, 9 AM to 9 PM."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I pay?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Cash and UPI (PhonePe, Google Pay, Paytm)."
+   }
+  }
+ ]
 }
 </script>
 
@@ -305,6 +368,7 @@ h1,h2{background:linear-gradient(180deg,#fff6d6 0%,var(--gold2) 45%,var(--gold) 
       <button type="button" id="langBtn" aria-label="Switch language / भाषा बदलें">English</button>
       <a class="btn line hide-m" id="navCall" href="#" hidden><span class="hi">कॉल</span><span class="en">Call</span></a>
       <a class="btn gold hide-m" id="navWa" href="#" rel="noopener" target="_blank" hidden>WhatsApp</a>
+      <button class="btn line hide-m" id="shareBtn" type="button"><span class="hi">शेयर</span><span class="en">Share</span></button>
       <a class="btn gold hide-m" href="#book"><span class="hi">बुक करें</span><span class="en">Book</span></a>
     </div>
   </div>
@@ -660,6 +724,15 @@ var REVIEWS = "";       // e.g. "27"
   if (!("IntersectionObserver" in window)){ return; }
   var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }); },{threshold:.12});
   els.forEach(function(el){ el.classList.add("rv"); io.observe(el); });
+})();
+
+(function(){
+  var b = document.getElementById("shareBtn"); if (!b) return;
+  b.addEventListener("click", function(){
+    var d = { title: "Vedic Jyotish Navgraha Nivaran Kendra, Samastipur", text: "वैदिक ज्योतिष नवग्रह निवारण केंद्र, गुदड़ी बाज़ार, समस्तीपुर", url: "https://astrology.tandonjewellers.com/" };
+    if (navigator.share){ navigator.share(d).catch(function(){}); }
+    else { window.open("https://wa.me/?text=" + encodeURIComponent(d.text + " " + d.url), "_blank", "noopener"); }
+  });
 })();
 
 var body = document.body, btn = document.getElementById("langBtn");
